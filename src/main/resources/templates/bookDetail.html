@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Book Detail</title>
+  <link rel="stylesheet" href="/css/styles.css"> <!-- Falls du eine CSS-Datei hast -->
+</head>
+<body>
+<h1>Book Details</h1>
+
+<div>
+  <p><strong>Title:</strong> <span th:text="${book.title}"></span></p>
+  <p><strong>Author:</strong> <span th:text="${book.author}"></span></p>
+  <p><strong>ISBN:</strong> $<span th:text="${book.isbn}"></span></p>
+  <p><strong>Published Date:</strong> $<span th:text="${book.publisheddate}"></span></p>
+</div>
+
+<div>
+  <a th:href="@{/books}">Back to Product List</a>
+  <!-- Hier könntest du Buttons zum Bearbeiten oder Löschen des Produkts hinzufügen -->
+  <form action="/deleteBook" method="POST">
+    <input type="hidden" name="bookId" th:value="${book.id}"> <!-- Die ID des zu löschenden Buches -->
+    <button type="submit">Delete</button>
+  </form>
+</div>
+</body>
+</html>

@@ -14,7 +14,7 @@ public class Book {
     private String title;
     private String author;
     private String isbn;
-    private Date publisheddate;
+    private java.sql.Date publisheddate;
 
     public Book(){
 
@@ -36,7 +36,7 @@ public class Book {
         return isbn;
     }
 
-    public Date getPublisheddate() {
+    public java.sql.Date getPublisheddate() {
         return publisheddate;
     }
 
@@ -56,7 +56,7 @@ public class Book {
         this.isbn = isbn;
     }
 
-    public void setPublisheddate(Date publisheddate) {
+    public void setPublisheddate(java.sql.Date publisheddate) {
         this.publisheddate = publisheddate;
     }
 }
